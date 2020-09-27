@@ -11,7 +11,7 @@ from requests.auth import HTTPBasicAuth
 identif = 'Hello World - Moon-V01'
 
 
-@app.route('/api/v01/')
+@app.route('/')
 def hello_world():
     return identif
 
