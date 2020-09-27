@@ -1,5 +1,4 @@
 # HU_Moon
-To receive light from the sun
 
 This will be the first world , in the Hello Universe approach
 
