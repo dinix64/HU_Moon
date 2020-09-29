@@ -1,4 +1,12 @@
-
+# Hello Universe Project
+# This is : Moon 
+# Moon will be acting like a API service , delivering basic functionalities 
+# and calling other services if neeeded
+# ***********************************************
+# 2020-09-18  V01
+# 2020-09-29  V02
+# 2020-09-29  V02 comments
+# ***********************************************
 from flask import Flask
 from flask import request
 import requests
