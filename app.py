@@ -37,7 +37,7 @@ def id():
     current_time = time.strftime("%H:%M:%S", t)
     return 'Identif :' + identif + ' - Server :' + hostname + ' in:' + ip_address + ' at:' + current_time + ' !'
 
-@app.route('/api/v01/kill')
+@app.route('/api/v01/killme')
 def shutdown():
     shutdown_server()
     return 'Server shutting down...'
