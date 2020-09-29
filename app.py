@@ -19,6 +19,11 @@ from requests.auth import HTTPBasicAuth
 
 identif = 'Hello World - Moon-V02'
 
+def shutdown_server():
+    func = request.environ.get('werkzeug.server.shutdown')
+    if func is None:
+        raise RuntimeError('Not running with the Werkzeug Server')
+    func()
 
 @app.route('/')
 def hello_world():
@@ -31,6 +36,11 @@ def id():
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
     return 'Identif :' + identif + ' - Server :' + hostname + ' in:' + ip_address + ' at:' + current_time + ' !'
+
+@app.route('/api/v01/killme')
+def shutdown():
+    shutdown_server()
+    return 'Server shutting down...'
 
 
 
