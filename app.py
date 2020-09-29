@@ -1,3 +1,4 @@
+
 from flask import Flask
 from flask import request
 import requests
@@ -8,7 +9,7 @@ import time
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V01-Temp'
+identif = 'Hello World - Moon-V02'
 
 
 @app.route('/')
