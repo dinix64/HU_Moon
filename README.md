@@ -10,3 +10,7 @@ It ill expose the following methods:
 
 /api/v01/id - returns the string , server and timestamp
 
+/api/v01/killme - shuts itself down simulating a crash
+
+
+
