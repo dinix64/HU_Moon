@@ -17,7 +17,7 @@ import time
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V02'
+identif = 'Hello World - Moon-V03'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
