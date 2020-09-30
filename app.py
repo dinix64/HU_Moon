@@ -7,6 +7,7 @@
 # 2020-09-29  V02
 # 2020-09-29  V02 comments
 # 2020-09-30  V03 Comments and retrofit Issues Closed: #2
+# 2020-10-01  V04 Just the identifier
 # ***********************************************
 from flask import Flask
 from flask import request
@@ -18,7 +19,7 @@ import time
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V03'
+identif = 'Hello World - Moon-V04'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
