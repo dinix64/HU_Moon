@@ -51,7 +51,7 @@ def variaveis():
         backend = os.environ['backend']
     except KeyError:
        backend = "please set env backend" 
-        sys.exit(1)
+
 
     return 'backend :' + backend 
     
@@ -61,15 +61,10 @@ def shutdown():
     shutdown_server()
     return 'Server shutting down...'
 
-@app.route('/vailer')
+@app.route('/api/v01/vailer')
 def vailer():
-    try:
-        backend = os.environ['backend']
-    except KeyError:
-        print("please set env backend" )
-        sys.exit(1)
-    
-    url = 'http://' + backend 
+    backend = os.environ['backend']
+    url = "http://" + backend 
     myRespons3 = requests.get(url)
     return myRespons3.text
 
