@@ -8,6 +8,7 @@
 # 2020-09-29  V02 comments
 # 2020-09-30  V03 Comments and retrofit Issues Closed: #2
 # 2020-10-01  V04 Just the identifier
+# 2020-10-02  V05 Add vars display
 # ***********************************************
 from flask import Flask
 from flask import request
@@ -15,11 +16,12 @@ import requests
 import socket
 import json
 import time
+import os
 
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V04-02'
+identif = 'Hello World - Moon-V05'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -38,6 +40,19 @@ def id():
     t = time.localtime()
     current_time = time.strftime("%H:%M:%S", t)
     return 'Identif :' + identif + ' - Server :' + hostname + ' in:' + ip_address + ' at:' + current_time + ' !'
+
+
+@app.route('/api/v01/variaveis')
+def variaveis():
+    #backend = os.environ('backend')
+    try:
+        backend = os.environ['USERNAME']
+    except KeyError:
+       backend = "please set env backend" 
+        #sys.exit(1)
+
+    return 'backend :' + backend 
+    
 
 @app.route('/api/v01/killme')
 def shutdown():
