@@ -46,7 +46,7 @@ def id():
 def variaveis():
     #backend = os.environ('backend')
     try:
-        backend = os.environ['USERNAME']
+        backend = os.environ['backend']
     except KeyError:
        backend = "please set env backend" 
         #sys.exit(1)
