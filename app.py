@@ -23,7 +23,7 @@ import sys
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V06'
+identif = 'Hello World - Moon-V06-01'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -44,8 +44,8 @@ def id():
     return 'Identif :' + identif + ' - Server :' + hostname + ' in:' + ip_address + ' at:' + current_time + ' !'
 
 
-@app.route('/api/v01/variaveis')
-def variaveis():
+@app.route('/api/v01/variables')
+def variables():
     #backend = os.environ('backend')
     try:
         backend = os.environ['backend']
@@ -61,8 +61,8 @@ def shutdown():
     shutdown_server()
     return 'Server shutting down...'
 
-@app.route('/api/v01/vailer')
-def vailer():
+@app.route('/api/v01/readsun')
+def readsun():
     backend = os.environ['backend']
     url = "http://" + backend 
     myRespons3 = requests.get(url)
