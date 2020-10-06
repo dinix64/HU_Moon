@@ -23,7 +23,7 @@ import sys
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V06-01'
+identif = 'Hello World - Moon-V06-03'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -50,7 +50,7 @@ def variables():
     try:
         backend = os.environ['backend']
     except KeyError:
-       backend = "please set env backend" 
+        backend = "please set env backend" 
 
 
     return 'backend :' + backend 
@@ -68,6 +68,12 @@ def readsun():
     myRespons3 = requests.get(url)
     return myRespons3.text
 
+
+@app.route('/api/v01/readsundirect')
+def readsundirect():
+    url = "http://sun:8080"
+    myRespons3 = requests.get(url)
+    return myRespons3.text
 
 
 
