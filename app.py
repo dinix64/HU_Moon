@@ -23,7 +23,7 @@ import sys
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V06-04'
+identif = 'Hello World - Moon-V06-05'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -48,7 +48,7 @@ def id():
 def variables():
     #backend = os.environ('backend')
     try:
-        backend = os.environ['backend2']
+        backend = os.environ['backend']
     except KeyError:
         backend = "please set env backend" 
 
