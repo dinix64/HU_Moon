@@ -23,7 +23,7 @@ import sys
 app = Flask(__name__)
 from requests.auth import HTTPBasicAuth
 
-identif = 'Hello World - Moon-V10-02-OutroTestTR'
+identif = 'Hello World - Moon-V10-02-OutroTestOC'
 
 def shutdown_server():
     func = request.environ.get('werkzeug.server.shutdown')
@@ -71,7 +71,7 @@ def readsun():
 
 @app.route('/api/v01/readsundirect')
 def readsundirect():
-    url = "http://sun:8080"
+    url = "http://sun03:8080"
     myRespons3 = requests.get(url)
     return myRespons3.text
 
